@@ -1,0 +1,6 @@
+framework module Pods_sportshowcase {
+  umbrella header "Pods-sportshowcase-umbrella.h"
+
+  export *
+  module * { export * }
+}
