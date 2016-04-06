@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -12,8 +13,10 @@
             <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
+            <string>NotoSans-Bold</string>
         </mutableArray>
         <mutableArray key="NotoSans-Regular.ttf">
+            <string>NotoSans</string>
             <string>NotoSans</string>
             <string>NotoSans</string>
         </mutableArray>
@@ -70,7 +73,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb-icon" translatesAutoresizingMaskIntoConstraints="NO" id="v1D-ID-kB4">
                                                 <rect key="frame" x="0.0" y="22" width="65" height="65"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wB4-6E-32s" customClass="MaterialButton" customModule="sportshowcase" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wB4-6E-32s" customClass="MaterialButton" customModule="sportshowcase" customModuleProvider="target">
                                                 <rect key="frame" x="105" y="38" width="415" height="33"/>
                                                 <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
@@ -204,12 +207,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RJ-nY-AAA" customClass="MaterialView" customModule="sportshowcase" customModuleProvider="target">
+                                <rect key="frame" x="20" y="72" width="560" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="K9q-NF-QTK">
+                                        <rect key="frame" x="8" y="8" width="544" height="44"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Talk about your sports acheivements!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iOU-fN-ciu" customClass="MaterialTextField" customModule="sportshowcase" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="430" height="44"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="IW0-GA-zI6">
+                                                <rect key="frame" x="440" y="0.0" width="44" height="44"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="nR5-jq-h4I"/>
+                                                    <constraint firstAttribute="width" constant="44" id="pQg-fa-O3f"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="7J5-bC-u23" appends="YES" id="IcB-4h-gFE"/>
+                                                </connections>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWj-Dm-2nh" customClass="MaterialButton" customModule="sportshowcase" customModuleProvider="target">
+                                                <rect key="frame" x="494" y="0.0" width="50" height="44"/>
+                                                <color key="backgroundColor" red="0.0" green="0.70588235294117641" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="9Vv-v3-mgc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="14"/>
+                                                <state key="normal" title="POST">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="makePost:" destination="2y4-Rd-On6" eventType="touchUpInside" id="ukV-CB-87n"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="7GB-ov-EYc"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="K9q-NF-QTK" secondAttribute="trailing" id="UG2-7S-wgI"/>
+                                    <constraint firstItem="K9q-NF-QTK" firstAttribute="leading" secondItem="9RJ-nY-AAA" secondAttribute="leadingMargin" id="i45-Kz-87j"/>
+                                    <constraint firstItem="K9q-NF-QTK" firstAttribute="top" secondItem="9RJ-nY-AAA" secondAttribute="topMargin" id="sh4-Rj-Og2"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="K9q-NF-QTK" secondAttribute="bottom" id="x6d-rH-PAw"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="352" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NWd-uO-hho">
-                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <rect key="frame" x="20" y="140" width="560" height="460"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="352" id="2OA-t9-ses" customClass="PostCell" customModule="sportshowcase" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="560" height="352"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" id="2OA-t9-ses" customClass="PostCell" customModule="sportshowcase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="352"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2OA-t9-ses" id="BBs-Bq-KR5">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="352"/>
@@ -219,7 +270,7 @@
                                                     <rect key="frame" x="0.0" y="8" width="560" height="335"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Pgu-YQ-FeK">
-                                                            <rect key="frame" x="71" y="8" width="320" height="320"/>
+                                                            <rect key="frame" x="107" y="7" width="320" height="320"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jys-Yo-MjQ">
                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
@@ -243,13 +294,13 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OJb-VO-u3b">
                                                                             <rect key="frame" x="263" y="3" width="57" height="58"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="200" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wY-tf-zJD">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="200" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wY-tf-zJD">
                                                                                     <rect key="frame" x="27" y="0.0" width="30" height="24"/>
                                                                                     <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Likes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1O-cS-HIF">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Likes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1O-cS-HIF">
                                                                                     <rect key="frame" x="17" y="34" width="40" height="24"/>
                                                                                     <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                                                                     <color key="textColor" red="0.81244297450000003" green="0.31720460769999997" blue="0.31834511859999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -295,6 +346,7 @@
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="descriptionText" destination="WhJ-DN-8Y0" id="iVy-Jz-C2i"/>
+                                            <outlet property="likeImage" destination="eH7-VC-zPH" id="eRe-Vo-iRP"/>
                                             <outlet property="likesLabel" destination="4wY-tf-zJD" id="bik-Mv-UHL"/>
                                             <outlet property="progireImg" destination="M6v-vU-Ow9" id="4fD-Lq-y4u"/>
                                             <outlet property="showCaseImg" destination="W4u-F8-2aU" id="7sN-U5-W4C"/>
@@ -305,18 +357,34 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="9RJ-nY-AAA" firstAttribute="top" secondItem="BPH-BP-5rd" secondAttribute="bottom" constant="8" id="0Rq-D1-DAf"/>
                             <constraint firstItem="NWd-uO-hho" firstAttribute="leading" secondItem="Poe-TK-f6o" secondAttribute="leadingMargin" id="5NM-I4-ci7"/>
                             <constraint firstItem="NWd-uO-hho" firstAttribute="top" secondItem="BPH-BP-5rd" secondAttribute="bottom" id="Dlv-Vm-xzG"/>
                             <constraint firstItem="Yrq-I4-KI8" firstAttribute="top" secondItem="NWd-uO-hho" secondAttribute="bottom" id="Lah-NB-bBx"/>
                             <constraint firstItem="NWd-uO-hho" firstAttribute="trailing" secondItem="Poe-TK-f6o" secondAttribute="trailingMargin" id="OKQ-Ua-Zj1"/>
+                            <constraint firstItem="9RJ-nY-AAA" firstAttribute="leading" secondItem="Poe-TK-f6o" secondAttribute="leadingMargin" id="k0o-5W-0PB"/>
+                            <constraint firstItem="9RJ-nY-AAA" firstAttribute="trailing" secondItem="Poe-TK-f6o" secondAttribute="trailingMargin" id="o8W-xv-fNR"/>
+                            <constraint firstItem="NWd-uO-hho" firstAttribute="top" secondItem="9RJ-nY-AAA" secondAttribute="bottom" constant="8" id="phs-EM-d6N"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Dlv-Vm-xzG"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="8zj-2L-ecZ"/>
                     <connections>
+                        <outlet property="imgSelectorImg" destination="IW0-GA-zI6" id="j6j-y0-nqv"/>
+                        <outlet property="postFeild" destination="iOU-fN-ciu" id="jkY-wN-Oml"/>
                         <outlet property="tableView" destination="NWd-uO-hho" id="3Th-qm-6mE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Lu-eo-IOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7J5-bC-u23">
+                    <connections>
+                        <action selector="selectImage:" destination="2y4-Rd-On6" id="FLh-hL-tzg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1864" y="94"/>
         </scene>
@@ -341,6 +409,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="50" height="50"/>
         <image name="code-icon-logo" width="318" height="281"/>
         <image name="fb-icon" width="65" height="65"/>
         <image name="heart-empty" width="150" height="147"/>

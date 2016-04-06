@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import Firebase
+
+//Data manipulation shold be handled from the model layer!!!
 
 class Post {
     private var _postDescription: String!
@@ -14,6 +17,7 @@ class Post {
     private var _likes: Int!
     private var _username: String!
     private var _postKey: String!
+    private var _postRef: Firebase!
     
     var postDescription: String {
         return _postDescription
@@ -56,5 +60,18 @@ class Post {
         if let description = dict["description"] as? String  {
             self._postDescription = description
         }
+        
+        self._postRef = DataService.ds.REF_POSTS.childByAppendingPath(self._postKey)
+    }
+    
+    //also need to save this to the database
+    func adjustLikes(addLike: Bool) {
+        if addLike == true {
+            _likes = _likes + 1
+        } else {
+            _likes = _likes - 1
+        }
+        
+        _postRef.childByAppendingPath("likes").setValue(_likes)
     }
 }

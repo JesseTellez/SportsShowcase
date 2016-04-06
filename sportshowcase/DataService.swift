@@ -9,6 +9,8 @@
 import Foundation
 import Firebase
 
+//FIREBASE IS SOCKETBASED
+
 let URL_BASE = "https://sportshowcase.firebaseio.com"
 
 class DataService {
@@ -33,6 +35,15 @@ class DataService {
     
     var REF_POSTS: Firebase {
         return _REF_POSTS
+    }
+    
+    var REF_USER_CURRENT: Firebase {
+        
+        let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
+        
+        let user = Firebase(url: "\(URL_BASE)/users/\(uid)")
+        
+        return user!
     }
     
     func createFireBaseUser(uid: String, user: Dictionary<String, String>) {
